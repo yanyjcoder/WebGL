@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebGL 学习</title>
+    <!--    ※顶点着色器  -->
+    <script id="vshader" type="x-shader/x-vertex">
+        attribute vec4 position;
+        uniform mat4 mvpMatrix;
+        void mian(void) {
+            gl_Position = mvpMatrix * vec4(position, 1.0);
+        }
+    </script>
+
+    <!--    ※片段着色器   -->
+    <script id="fshader" type="x-shader/x-fragment">
+        void main(void) {
+           gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+
+        }
+
+    </script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript" src="js/minMatrix.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/demo1.js"></script>
+
+</html>
